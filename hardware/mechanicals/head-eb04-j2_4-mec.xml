@@ -6,7 +6,7 @@
 
     <group name="GENERAL">
         <param name="MotioncontrolVersion"> 6 </param>
-        <param name="Joints"> 2 </param> <!-- the number of joints of the robot part -->
+        <param name="Joints"> 3 </param> <!-- the number of joints of the robot part -->
 
         <!-- joint number in sub-part           0              1           -->
 
@@ -17,11 +17,11 @@
         <param name="Encoder">                  568.9         568.9         -568.9         </param>
         <param name="fullscalePWM">           1333            1333          1333            </param>
         <param name="ampsToSensor">             1000.0        1000.0        1000.0     </param>
-        <param name="Gearbox_M2J">              0               0             0        </param> <!-- Check if this is right  -->
+        <param name="Gearbox_M2J">              1               1             1        </param> <!-- 0 does not work, check if 1 is right  -->
         <param name="Gearbox_E2J">   	          1             1             1  </param>
         <param name="useMotorSpeedFbk">           1             1             1  </param>
         <param name="MotorType">                 "DC"          "DC"           "DC"  </param>
-        <param name="Verbose">   0    </param>
+        <param name="Verbose">   1    </param>
     </group>
 
     <group name="LIMITS">
@@ -32,22 +32,22 @@
     </group>
 
      <group name="COUPLINGS">
-
-        <param name ="matrixJ2M"><!-- Check if this is right  -->
+		<!-- Check if this is right  -->
+        <param name ="matrixJ2M">
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00 
         </param>
-
-        <param name ="matrixM2J"><!-- Check if this is right  -->
+		<!-- Check if this is right  -->
+        <param name ="matrixM2J">
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00
             0.00    0.00    0.00    0.00 
         </param>
-
-        <param name ="matrixE2J"><!-- Check if this is right  -->
+		<!-- Check if this is right  -->
+        <param name ="matrixE2J">
             1.00    0.00    0.00    0.00    0.00    0.00
             0.00    1.00    0.00    0.00    0.00    0.00
             0.00    0.00    1.00    0.00    0.00    0.00

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="vizzy" portprefix="vizzy" build="1">
+    <params>
+    <xi:include href="hardware/electronics/vizzy-desktop.xml" />
+    </params>
+          
+    <devices>
+	
+    <!-- CARTESIANS --> 
+    <!--<xi:include href="cartesian/left_arm-cartesian.xml" /> -->
+    <!--<xi:include href="cartesian/right_arm-cartesian.xml" /> -->
+    
+    <!-- HEAD -->
+	<xi:include href="./hardware/motorControl/head-eb04-j2_4-mc.xml" /> 
+    <xi:include href="./hardware/motorControl/head-eb05-j0_1-mc.xml" />  
+    <xi:include href="./wrappers/motorControl/head-mc_wrapper.xml" />
+	
+	
+	<!--  CALIBRATORS -->
+	<xi:include href="./calibrators/head-calib.xml" />
+	</devices>
+</robot> 
