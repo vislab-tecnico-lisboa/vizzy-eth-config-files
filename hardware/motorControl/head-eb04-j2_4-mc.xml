@@ -2,18 +2,18 @@
 <!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 
 
-<device xmlns:xi="http://www.w3.org/2001/XInclude" name="head-eb21-j2_5-mc" type="embObjMotionControl">
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="head-eb04-j2_4-mc" type="embObjMotionControl">
 
     <xi:include href="../../general.xml" />
-    <xi:include href="../../hardware/electronics/head-eb21-j2_5-eln.xml" />
-    <xi:include href="../../hardware/mechanicals/head-eb21-j2_5-mec.xml" />
-    <xi:include href="./head-eb21-j2_5-mc_service.xml" />
+    <xi:include href="../../hardware/electronics/head-eb04-j2_4-eln.xml" />
+    <xi:include href="../../hardware/mechanicals/head-eb04-j2_4-mec.xml" />
+    <xi:include href="./head-eb04-j2_4-mc_service.xml" />
 
     <!-- joint number                           0                   1                   2        -->
     <!-- joint name                             eye-tilt            version           vergence   -->         <!-- j1 is left-eye, j2 is right-eye -->
     <group name="LIMITS">
-        <param name="jntPosMin">                 -30                 -30                 0                   </param>
-        <param name="jntPosMax">                +30                 +30                 +45                 </param>
+        <param name="jntPosMin">                 -30                 -30                 -30                   </param>
+        <param name="jntPosMax">                +30                 +30                 +30                 </param>
         <param name="jntVelMax">                1000                1000                1000                </param>
         <param name="motorOverloadCurrents">    2000                2500                2500                </param>
         <param name="motorNominalCurrents">     700                 700                 700                 </param>
