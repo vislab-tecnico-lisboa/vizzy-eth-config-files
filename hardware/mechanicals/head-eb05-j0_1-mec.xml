@@ -14,10 +14,11 @@
         <param name="AxisMap">                  0               1               </param>    
         <param name="AxisName">              "neck_pan"       "neck_tilt"     </param>
         <param name="AxisType">                "revolute"    "revolute"         </param>
-        <param name="Encoder">                  568.9         568.9         </param>
+        <param name="Encoder">                  73255.5         73255.5         </param>
         <param name="fullscalePWM">           1333            1333            </param>
         <param name="ampsToSensor">             1000.0             1000.0             </param>
         <param name="Gearbox_M2J">              1          1          </param> <!-- 0 on this value caused error, check if 1 is right  -->
+		<param name="JointEncoderType">     "OPTICAL_QUAD" 	"OPTICAL_QUAD"</param>
         <param name="Gearbox_E2J">   	          1             1               </param>
         <param name="useMotorSpeedFbk">           1             1               </param>
         <param name="MotorType">                 "DC"          "DC"             </param>
@@ -25,8 +26,8 @@
     </group>
 
     <group name="LIMITS">
-        <param name="hardwareJntPosMin">      -55         -18         </param><!-- These hardware limits should match the old parameter Zeros  -->
-        <param name="hardwareJntPosMax">      +55         +37         </param>
+        <param name="hardwareJntPosMin">      -55         -20         </param><!-- These hardware limits should match the old parameter Zeros  -->
+        <param name="hardwareJntPosMax">      +55         +40         </param>
         <param name="rotorPosMin">             0           0           </param>
         <param name="rotorPosMax">             0           0           </param>
     </group>
