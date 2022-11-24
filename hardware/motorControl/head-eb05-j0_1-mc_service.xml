@@ -22,18 +22,18 @@
                 </group>
                 
                 <group name="ENCODER1">  
-                    <param name="type">             qenc                 none                 </param>  
-                    <param name="port">             CONN:P3            CONN:none            </param>
-                    <param name="position">         atmotor             none             </param> 
-                    <param name="resolution">       2048                0               </param>
+                    <param name="type">             none                 none                 </param>  
+                    <param name="port">             CONN:none            CONN:none            </param>
+                    <param name="position">         none             none             </param> 
+                    <param name="resolution">       0                0               </param>
                     <param name="tolerance">        0                0              </param>  
                 </group>        
                 
                 <group name="ENCODER2">
-                    <param name="type">             none                qenc                </param>
-                    <param name="port">             CONN:none             CONN:P4             </param>
-                    <param name="position">         none             atmotor             </param>
-                    <param name="resolution">       0                2048                </param>
+                    <param name="type">             qenc                qenc                </param>
+                    <param name="port">             CONN:P3             CONN:P4             </param>
+                    <param name="position">         atmotor             atmotor             </param>
+                    <param name="resolution">       512                512                </param>
                     <param name="tolerance">        0                   0                   </param>  
                 </group>  
 
