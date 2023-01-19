@@ -13,7 +13,7 @@
 	</group>
 	<group name="CALIBRATION">
 		<param name="calibrationType"> 5 5 5 5 5 </param>
-		<param name="calibration1"> 400.0 400.0 1000.0 1000.0 1000.0</param>
+		<param name="calibration1"> 400.0 600.0 1000.0 1000.0 1000.0</param>
 		<param name="calibration2"> 0.0 0.0 10.0 -20.0 -20.0 </param><!-- Review these values -->
 		<param name="calibration3"> 0.0 0.0 0.0 0.0 0.0 </param>
 		<param name="calibration4"> 0 0 0 0 0  </param>
@@ -22,7 +22,7 @@
 		<param name="calibrationDelta"> -55.0 -40.0 0.0 0.0 0.0 </param>
 		<param name="startupPosition"> 0.0 0.0 0.0 0.0 0.0  </param>
 		<param name="startupVelocity"> 10.0 10.0 10.0 10.0 10.0 </param>
-		<param name="startupMaxPwm"> 1200.0 1200.0 0.0 0.0 0.0 </param>
+		<param name="startupMaxPwm"> 1200.0 1400.0 0.0 0.0 0.0 </param>
 		<param name="startupPosThreshold"> 2 1 1 180 180  </param>
 	</group>
 	<param name="CALIB_ORDER"> (0 1) </param> <!-- (0 1 2) (3) (4)-->
