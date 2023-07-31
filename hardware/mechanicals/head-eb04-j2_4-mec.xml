@@ -26,8 +26,8 @@
     </group>
 
     <group name="LIMITS">
-        <param name="hardwareJntPosMin">      -40         -40         0</param>
-        <param name="hardwareJntPosMax">      +40         +40         +41</param> <!-- review if the limit is +80 -->
+        <param name="hardwareJntPosMin">      -40         -41         -2</param>
+        <param name="hardwareJntPosMax">      +40         +41         +41</param> <!-- review if the limit is +80 -->
         <param name="rotorPosMin">             0           0           0</param>
         <param name="rotorPosMax">             0           0           0</param>
     </group>
@@ -36,15 +36,15 @@
 		<!-- Check if this is right  -->
         <param name ="matrixJ2M">
             1.00    0.00    0.00    0.00
-            0.00    1.00    -1.00    0.00
             0.00    1.00    1.00    0.00
+            0.00    1.00    -1.00    0.00
             0.00    0.00    0.00    0.00 
         </param>
 		<!-- Check if this is right  -->
         <param name ="matrixM2J">
             1.00    0.00    0.00    0.00
             0.00    0.50    0.50    0.00
-            0.00    -0.50    0.50    0.00
+            0.00    0.50   -0.50    0.00
             0.00    0.00    0.00    0.00 
         </param>
 		<!-- Check if this is right  -->
