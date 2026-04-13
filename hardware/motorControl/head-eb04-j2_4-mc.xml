@@ -9,10 +9,11 @@
     <xi:include href="../../hardware/mechanicals/head-eb04-j2_4-mec.xml" />
     <xi:include href="./head-eb04-j2_4-mc_service.xml" />
 
-    <!-- joint number                           0                   1                   2        -->
-    <!-- joint name                             eye-tilt            version           vergence   -->         <!-- j1 is left-eye, j2 is right-eye -->
+    <!-- joint number                           0                   1                   2                   -->
+    <!-- joint name                             eye tilt            version           vergence              -->    
+    <!-- Equivalent Motor                       eye tilt            right eye pan     left eye pan          -->      
     <group name="LIMITS">
-        <param name="jntPosMin">                 -30                 -30                 0                   </param>
+        <param name="jntPosMin">                -30                 -30                 0                   </param>
         <param name="jntPosMax">                +30                 +30                 +30                 </param>
         <param name="jntVelMax">                1000                1000                1000                </param>
         <param name="motorOverloadCurrents">    2000                2500                2500                </param>
@@ -44,14 +45,14 @@
     <!-- default position PID: begin -->
     
     <group name="POS_PID_DEFAULT">
-        <param name="controlLaw">               minjerk         </param>
-        <param name="outputType">               pwm             </param>
-        <param name="fbkControlUnits">          metric_units    </param>
-        <param name="outputControlUnits">       machine_units   </param>
-        <param name="kp">                       +50       +50        +50        </param>
-        <param name="kd">                       +500       +500       +500         </param>
-        <param name="ki">                       +1        +5       +5       </param>
-        <param name="maxOutput">                1333        1333        1333        </param>
+        <param name="controlLaw">               minjerk        			            </param>
+        <param name="outputType">               pwm            			            </param>
+        <param name="fbkControlUnits">          metric_units    	                </param>
+        <param name="outputControlUnits">       machine_units   	                </param>
+        <param name="kp">                       +500        +500      	+500        </param>
+        <param name="kd">                       +10         +10         +10         </param>
+        <param name="ki">                       +10         +50         +50         </param>
+        <param name="maxOutput">                2000        2000        2000        </param>
         <param name="maxInt">                   1000        1000        1000        </param>
         <param name="stictionUp">               0           0           0           </param>
         <param name="stictionDown">             0           0           0           </param>

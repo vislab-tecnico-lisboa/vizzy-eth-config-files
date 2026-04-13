@@ -10,31 +10,31 @@
         <group name="PROPERTIES">
         
             <group name="ETHBOARD">
-                <param name="type">             mc4plus                     </param> 
+                <param name="type">             mc4plus                                       </param> 
             </group>          
 
 
             <group name="JOINTMAPPING">
 
                 <group name="ACTUATOR">                 
-                    <param name="type">             pwm                 pwm                 </param>
-                    <param name="port">             CONN:P3             CONN:P4             </param>
+                    <param name="type">             pwm                  pwm                  </param>
+                    <param name="port">             CONN:P3              CONN:P2              </param>
                 </group>
                 
                 <group name="ENCODER1">  
                     <param name="type">             none                 none                 </param>  
                     <param name="port">             CONN:none            CONN:none            </param>
-                    <param name="position">         none             none             </param> 
-                    <param name="resolution">       0                0               </param>
-                    <param name="tolerance">        0                0              </param>  
+                    <param name="position">         none                 none                 </param> 
+                    <param name="resolution">       0                    0                    </param>
+                    <param name="tolerance">        0                    0                    </param>  
                 </group>        
                 
                 <group name="ENCODER2">
-                    <param name="type">             qenc                qenc                </param>
-                    <param name="port">             CONN:P3             CONN:P4             </param>
-                    <param name="position">         atmotor             atmotor             </param>
-                    <param name="resolution">       512                512                </param>
-                    <param name="tolerance">        0                   0                   </param>  
+                    <param name="type">             qenc                qenc                  </param>
+                    <param name="port">             CONN:P3             CONN:P2               </param>
+                    <param name="position">         atmotor             atmotor               </param>
+                    <param name="resolution">       512                 512                   </param>
+                    <param name="tolerance">        0                   0                     </param>  
                 </group>  
 
             </group>    

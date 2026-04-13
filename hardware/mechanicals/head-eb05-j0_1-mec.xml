@@ -8,46 +8,46 @@
         <param name="MotioncontrolVersion"> 6 </param>
         <param name="Joints"> 2 </param> <!-- the number of joints of the robot part -->
 
-        <!-- joint number in sub-part           0              1           -->
+        <!-- joint number in sub-part          0                 1              -->
 
-        <!-- joint name                         neck_pan     neck_tilt   -->   
-        <param name="AxisMap">                  0               1               </param>    
-        <param name="AxisName">              "neck_pan"       "neck_tilt"     </param>
-        <param name="AxisType">                "revolute"    "revolute"         </param>
-        <param name="Encoder">                  73255.5         73255.5         </param>
-        <param name="fullscalePWM">           1333            1333            </param>
-        <param name="ampsToSensor">             1000.0             1000.0             </param>
-        <param name="Gearbox_M2J">              1          1          </param> <!-- 0 on this value caused error, check if 1 is right  -->
-	<param name="JointEncoderType">     "OPTICAL_QUAD" 	"OPTICAL_QUAD"</param>
-        <param name="Gearbox_E2J">   	          1             1               </param>
-        <param name="useMotorSpeedFbk">           1             1               </param>
-        <param name="MotorType">                 "DC"          "DC"             </param>
-        <param name="Verbose">   1    </param>
+        <!-- joint name                        neck_pan          neck_tilt      -->   
+        <param name="AxisMap">                 0                 1              </param>    
+        <param name="AxisName">                "neck_pan"        "neck_tilt"    </param>
+        <param name="AxisType">                "revolute"        "revolute"     </param>
+        <param name="Encoder">                  73255.5          73255.5        </param>
+        <param name="fullscalePWM">             1333             1333           </param>
+        <param name="ampsToSensor">             1000.0           1000.0         </param>
+        <param name="Gearbox_M2J">              1                1              </param>
+	    <param name="JointEncoderType">         "OPTICAL_QUAD" 	"OPTICAL_QUAD"  </param>
+        <param name="Gearbox_E2J">   	        1                1              </param>
+        <param name="useMotorSpeedFbk">         1                1              </param>
+        <param name="MotorType">                "DC"             "DC"           </param>
+        <param name="Verbose">                  1                1              </param>
     </group>
 
     <group name="LIMITS">
-        <param name="hardwareJntPosMin">      -55         -40         </param><!-- These hardware limits should match the old parameter Zeros  -->
-        <param name="hardwareJntPosMax">      +55         +40         </param>
+        <param name="hardwareJntPosMin">      -55         -40          </param> <!-- These hardware limits should match the old parameter Zeros  -->
+        <param name="hardwareJntPosMax">      +55         +40          </param>
         <param name="rotorPosMin">             0           0           </param>
         <param name="rotorPosMax">             0           0           </param>
     </group>
 
      <group name="COUPLINGS">
-		<!-- Check if this is right  -->
+
         <param name="matrixJ2M">  
             1.00    0.00    0.00    0.00
             0.00    1.00    0.00    0.00
             0.00    0.00    1.00    0.00
             0.00    0.00    0.00    1.00 
         </param>
-		<!-- Check if this is right  -->
+
         <param name="matrixM2J">  
             1.00    0.00    0.00    0.00
             0.00    1.00    0.00    0.00
             0.00    0.00    1.00    0.00
             0.00    0.00    0.00    1.00 
         </param>
-		<!-- Check if this is right  -->
+
         <param name ="matrixE2J"> 
             1.00    0.00    0.00    0.00    0.00    0.00
             0.00    1.00    0.00    0.00    0.00    0.00
@@ -57,7 +57,7 @@
 
     </group>
 
-    <group name="JOINTSET_CFG"> <!-- To be deleted  -->
+    <group name="JOINTSET_CFG"> <!-- To be deleted? -->
         <param name= "numberofsets"> 2 </param>
         <group name="JOINTSET_0">
             <param name="listofjoints">  0           </param>

@@ -5,27 +5,29 @@
 	<xi:include href="../general.xml" />
 	<group name="GENERAL">
 		<param name="joints"> 5 </param>
-		<param name="deviceName"> Head_Calibrator </param>
+		<param name="deviceName"> Head_Calibrator 							</param>
 	</group>
 	<group name="HOME">
-		<param name="positionHome"> 0 0 0 0 0 </param>
-		<param name="velocityHome"> 10 10 10 10 -20 </param>
+		<param name="positionHome"> 0 0 0 0 0 								</param>
+		<param name="velocityHome"> 20 20 10 10 10 							</param>
 	</group>
 	<group name="CALIBRATION">
-		<param name="calibrationType"> 5 5 5 5 5 </param>
-		<param name="calibration1"> 400.0 600.0 1000.0 1000.0 1000.0</param>
-		<param name="calibration2"> 0.0 0.0 0.0 2932914.5 2932914.5 </param><!-- Review these values -->
-		<param name="calibration3"> 0.0 0.0 0.0 0.0 0.0 </param>
-		<param name="calibration4"> 0 0 0 0 0  </param>
-        <param name="calibration5"> 0 0 0 0 0 </param>
-        <param name="calibrationZero"> 0.0 0.0 0.0 0.0 0.0 </param>
-		<param name="calibrationDelta"> -55.0 -40.0 -40.0 0.0 0.0 </param>
-		<param name="startupPosition"> 0.0 0.0 0.0 0.0 0.0  </param>
-		<param name="startupVelocity"> 10.0 10.0 20.0 10.0 10.0 </param>
-		<param name="startupMaxPwm"> 1200.0 1400.0 1200.0 1200.0 1200.0 </param>
-		<param name="startupPosThreshold"> 4.5 4.5 4.5 4.5 4.5  </param>
+		<param name="calibrationType"> 5 5 5 5 5 							</param>
+		<param name="calibration1"> 1000.0 800.0 2000.0 2000.0 2000.0		</param>
+		<param name="calibration2"> 0.0 0.0 0.0 0.0 0.0 					</param>
+		<param name="calibration3"> 0.0 0.0 0.0 0.0 0.0 					</param>
+		<param name="calibration4"> 0 0 0 0 0  								</param>
+        <param name="calibration5"> 0 0 0 0 0 								</param>
+        <param name="calibrationZero"> 0.0 0.0 0.0 0.0 0.0 					</param>
+		<param name="calibrationDelta"> -55.0 -40.0 -40.0 -40.0 -40.0 		</param>
+		<param name="startupPosition"> 0.0 0.0 0.0 0.0 0.0  				</param>
+		<param name="startupVelocity"> 10.0 10.0 20.0 10.0 10.0 			</param>
+		<param name="startupMaxPwm"> 1600.0 1400.0 1400.0 1400.0 1400.0 	</param>
+		<param name="startupPosThreshold"> 1.0 1.0 1.0 1.0 1.0  			</param>
 	</group>
-	<param name="CALIB_ORDER"> (0 1 2) (3 4)</param> <!-- (0 1 2) (3 4)-->
+
+	<!-- It is advised not to calibrate j1 with j0 because the head plate will hit the shoulder. -->
+	<param name="CALIB_ORDER">(0) (1) (2) (3 4)</param> <!-- Maybe (0 2) (1) (3 4)? -->
 	<action phase="startup" level="10" type="calibrate">
 		<param name="target">head-mc_wrapper</param>
 	</action>

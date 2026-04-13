@@ -8,46 +8,77 @@
         <param name="MotioncontrolVersion"> 6 </param>
         <param name="Joints"> 3 </param> <!-- the number of joints of the robot part -->
 
-        <!-- joint number in sub-part           0              1           -->
-
-        <!-- joint name                         eye_tilt     left_eye_pan	right_eye_pan   -->   
-        <param name="AxisMap">                  0               1               2 </param>    
-        <param name="AxisName">              "eye_tilt"       "version"         "vergence"</param>
-        <param name="AxisType">                "revolute"    "revolute"    "revolute"</param>
-        <param name="Encoder">                  73255.5         73255.5         73255.5         </param>
-        <param name="fullscalePWM">           1333            1333          1333            </param>
-        <param name="ampsToSensor">             1000.0        1000.0        1000.0     </param>
-        <param name="Gearbox_M2J">              1               1             1        </param> <!-- 0 does not work, check if 1 is right  -->
-        <param name="Gearbox_E2J">   	          1             1             1  </param>
-        <param name="JointEncoderType">     "OPTICAL_QUAD" 	"OPTICAL_QUAD"</param>
-        <param name="useMotorSpeedFbk">           1             1             1  </param>
-        <param name="MotorType">                 "DC"          "DC"           "DC"  </param>
-        <param name="Verbose">   1    </param>
+        <!-- joint number in sub-part          0               1                2                        -->
+    	<!-- joint name                        eye tilt        version          vergence                 -->    
+    	<!-- Equivalent Motor                  eye tilt        right eye pan    left eye pan             -->   
+        <param name="AxisMap">                 0               1                2 			            </param>    
+        <param name="AxisName">                "eye_tilt"      "version"        "vergence"		        </param>
+        <param name="AxisType">                "revolute"      "revolute"       "revolute"		        </param>
+        <param name="Encoder">                 73255.5         73255.5          73255.5                 </param>
+        <param name="fullscalePWM">            1333            1333             1333            	    </param>
+        <param name="ampsToSensor">            1000.0          1000.0           1000.0     		        </param>
+        <param name="Gearbox_M2J">             1               1             	1        		        </param>
+        <param name="Gearbox_E2J">   	       1               1             	1  			            </param>
+        <param name="JointEncoderType">        "OPTICAL_QUAD"  "OPTICAL_QUAD"   "OPTICAL_QUAD"		    </param>
+        <param name="useMotorSpeedFbk">        1               1             	1  			            </param>
+        <param name="MotorType">               "DC"            "DC"           	"DC"  			        </param>
+        <param name="Verbose">   	           1    	       1                1                       </param>
     </group>
 
     <group name="LIMITS">
-        <param name="hardwareJntPosMin">      -40         -41         -2</param>
-        <param name="hardwareJntPosMax">      +40         +41         +41</param> <!-- review if the limit is +80 -->
-        <param name="rotorPosMin">             0           0           0</param>
-        <param name="rotorPosMax">             0           0           0</param>
+        <param name="hardwareJntPosMin">      -40         -41         -41 </param>
+        <param name="hardwareJntPosMax">      +40         +41         +41 </param>
+        <param name="rotorPosMin">             0           0           0  </param>
+        <param name="rotorPosMax">             0           0           0  </param>
     </group>
 
      <group name="COUPLINGS">
-		<!-- Check if this is right  -->
+	<!-- 
+        motor1 (right eye pan) = joint1 - 0.5 joint2 <=>
+    <=> motor1 = 0.5 motor1 + 0.5 motor2 - 0.5 (- motor1 + motor2) <=>
+    <=> motor1 = 0.5 motor1 + 0.5 motor1 - 0.5 motor2 + 0.5 motor2 <=>
+    <=> motor1 = motor1 
+    -->
+	<!-- 
+        motor2 (left eye pan) = joint1 + 0.5 joint2 <=>
+    <=> motor2 = 0.5 motor1 + 0.5 motor2 + 0.5 (- motor1 + motor2) <=>
+    <=> motor2 = 0.5 motor1 - 0.5 motor1 + 0.5 motor2 + 0.5 motor2 <=>
+    <=> motor2 = motor2 
+    -->
+	<!-- 
+		    | j0 | j1 | j2 | j3 |
+	 motor0 |    |    |    |    |
+	 motor1 |    |    |    |    |
+	 motor2 |    |    |    |    |
+	 motor3 |    |    |    |    |
+	 -->
         <param name ="matrixJ2M">
             1.00    0.00    0.00    0.00
-            0.00    1.00    1.00    0.00
-            0.00    1.00    -1.00    0.00
+            0.00    1.00   -0.50    0.00
+            0.00    1.00    0.50    0.00
             0.00    0.00    0.00    0.00 
         </param>
-		<!-- Check if this is right  -->
+        
+    <!-- Setting this matrix first and then calculating its inverse = J2M is advised. -->
+	<!-- joint1 (version) = 0.5 motor1 (right eye pan) + 0.5 motor2 (left eye pan)    -->
+	<!-- joint2 (vergence) = motor2 (left eye pan) - motor1 (right eye pan)           -->
+	<!-- 
+	    | motor0 | motor1 | motor2 | motor3 |
+	 j0 |        |        |        |        | -> eye tilt
+	 j1 |        |        |        |        | -> version
+	 j2 |        |        |        |        | -> vergence
+	 j3 |        |        |        |        |
+	 -->
         <param name ="matrixM2J">
             1.00    0.00    0.00    0.00
             0.00    0.50    0.50    0.00
-            0.00    0.50   -0.50    0.00
+            0.00    -1.00   1.00    0.00
             0.00    0.00    0.00    0.00 
         </param>
-		<!-- Check if this is right  -->
+	
+	<!-- Check iCub code  -->
+    <!-- E2J is the bridge between raw encoder data and the joints position. -->
+    <!-- It should be identity. -->
         <param name ="matrixE2J">
             1.00    0.00    0.00    0.00    0.00    0.00
             0.00    1.00    0.00    0.00    0.00    0.00
@@ -57,7 +88,7 @@
 
     </group>
 
-    <group name="JOINTSET_CFG"> <!-- To be deleted  -->
+    <group name="JOINTSET_CFG"> <!-- To be deleted?  -->
         <param name= "numberofsets"> 2 </param>
         <group name="JOINTSET_0">
             <param name="listofjoints">  0             </param>
